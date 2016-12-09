@@ -13,14 +13,41 @@ body{
 ul{
     list-style: none;
 }
+#head:before{
+    background: #252d31;
+    height: 30vh;
+    width: 120%;
+    content: "";
+    position: absolute;
+    left: -1vh;
+    top: -11vh;
+    transform: skew(0deg,355deg);
+    border: solid 3px white;
+}
+#head:after{
+    background: #252d31;
+    height: 35vh;
+    width: 120%;
+    content: "";
+    position: absolute;
+    left: -1vh;
+    bottom: -18vh;
+    transform: skew(0deg,5deg);
+    border: solid 3px white;
+}
+header{
+    overflow: auto;
+}
 #head{
-    background: url("../img/tracto.jpg") fixed center;
+    background: url("../img/tracto.jpg") center;
     background-size: cover;
     display: flex;
     justify-content: center;
     height: 100vh;
+    overflow: hidden;
 }
 #head .container{
+    z-index: 100;
     width: 100%;
     background: rgba(0, 0, 0, .5);
     display: flex;
@@ -38,8 +65,8 @@ align-items: center;
     
 }
 #head .logo img{
-    width: 100px;
-    
+    margin-top: 120px;
+    width: 250px;
 }
 #head nav ul{
     display: flex;
@@ -58,6 +85,7 @@ align-items: center;
 }
 .producto img{
     width: 250px;
+    animation: fadein 2s;
 }
 #slider{
     flex: 1;
@@ -73,7 +101,13 @@ align-items: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: fadein 2s;
 }
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 .info p{
     text-align: justify;
     background: rgba(57,81,157,.5);
@@ -100,11 +134,15 @@ align-items: center;
     width: 180px;
 }
 main{
-    color: black;
+    background: url("../img/tracto.jpg") center;
+    color: white;
+    position: relative;
+    z-index: 100;
 }
 .productos{
     padding: 1rem;
     text-align: center;
+    z-index: 100;
 }
 .cuadro{
     max-width: 350px;
@@ -122,23 +160,63 @@ main{
 }
 .cuadro img{
     width: 100%;
+    background: rgba(255,255,255,.7);
+    margin-bottom: 10px;
 }
 .cuadro{
     margin: 3rem 1rem;
-    border: solid 3px black;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity:0;
 }
 .cuadro h3{
+    
     text-decoration: none;
     color: snow;
     display: block;
     width: 150px;
-    padding: .5rem;
-    background: #39519D;
+    padding: 1rem;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+0,2989d8+0,0075d6+34,172c3d+100 */
+background: rgb(30,87,153); /* Old browsers */
+background: -moz-linear-gradient(-45deg, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 0%, rgba(41,137,216,1) 0%, rgba(0,117,214,1) 34%, rgba(23,44,61,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 0%,rgba(41,137,216,1) 0%,rgba(0,117,214,1) 34%,rgba(23,44,61,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 0%,rgba(41,137,216,1) 0%,rgba(0,117,214,1) 34%,rgba(23,44,61,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#172c3d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     margin: .2rem;
     text-transform: uppercase;
     font-style: italic;
     transition: .5s all;
+}
+.cuadro h3:hover{
+    width: 180px;
+}
+footer{
+    padding: 1rem;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+0,2633c9+0,0052b7+63,36386b+100 */
+background: rgb(30,87,153); /* Old browsers */
+background: -moz-linear-gradient(-45deg, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 0%, rgba(38,51,201,1) 0%, rgba(0,82,183,1) 63%, rgba(54,56,107,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 0%,rgba(38,51,201,1) 0%,rgba(0,82,183,1) 63%,rgba(54,56,107,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 0%,rgba(38,51,201,1) 0%,rgba(0,82,183,1) 63%,rgba(54,56,107,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#36386b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+text-transform: uppercase;
+display: flex;
+justify-content: center;
+}
+footer .container{
+    width: 80%;
+}
+.sociales{
+    background: #131719;
+    text-align: right;
+    position: relative;
+    z-index: 100;
+}
+.sociales a{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    padding: 1rem;
+    z-index: 100;
 }
